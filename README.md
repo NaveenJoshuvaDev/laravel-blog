@@ -108,3 +108,46 @@ they clearly mentioned with thumbnail as required like below
                     ->maxLength(2048),
 ```
 - Now I removed required now its working completely fine
+
+
+- I have removed required
+
+
+- Adjust Form Layouts and Table Columns
+
+- to connect and see db  localhost port no in docker yaml file then fill up
+- user sail
+- pwd password
+
+
+
+- now i have to modify published at so now i have cahnge as nullable  to  do that create a migration file
+- php artisan make:migration modify_thumbnail_column_in_your_table
+
+- php artisan make:migration modify_published_at_column_in_posts_table
+
+- php artisan make:migration modify_published_at_column_in_posts_table
+
+
+ - $table->dateTime('published_at')->nullable(false)->change();
+
+
+
+- above code doean't work so i changed as earlier code when we change it for thumbnail
+
+- Now for the FrontEnd of Blog we have to create a layout AppLayout
+
+- php artisan make:component AppLayout
+
+
+- we created component based layout
+
+- in our home page i have linked <x-app-layout> which selects main layout file
+
+- In Laravel, the <x-app-layout> tag is typically used in Blade views to include the layout file associated with the application. 
+
+
+- still now we have created db , model, tables and views ,now lets make controller
+- why because we have worked admin panel thats taken care by filament resource but to produce the output in user blog we have to create a controller
+
+ - php artisan make:controller PostController --resource --model=Post
