@@ -10,9 +10,14 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         //
+
+        $posts = Post::query()->where('active,'=',1)->where('published_at','=','NULL')
+        ->orderBy('published_at','desc')
+        ->paginate();
+        return view('home', compact('posts'));
     }
 
     /**

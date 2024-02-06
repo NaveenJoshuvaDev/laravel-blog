@@ -151,3 +151,18 @@ they clearly mentioned with thumbnail as required like below
 - why because we have worked admin panel thats taken care by filament resource but to produce the output in user blog we have to create a controller
 
  - php artisan make:controller PostController --resource --model=Post
+
+ - in controller as per laravel 10 as security measures we can type hint what should an function must return as shown in an example below
+
+ ```
+ public function index(): View
+    {
+        //
+        return view('home');
+    }
+
+
+
+ ```
+
+ - Generate php artisan make:component PostItem --view
